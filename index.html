@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="typing-wrapper">
+        <p>Hai Dang-qua dep trai</p>
+    </div>
+</body>
+<script>
+   var p = document.querySelector('.typing-wrapper p')
+   var originContent = p.innerHTML
+   var index = 0
+   var isFowart = true
+   setInterval(function() {
+       if(isFowart) {
+               index++
+               if(index >= originContent.length) {
+                   isFowart = false
+               }
+       } else{
+            index--
+            if(index <= 0 ) {
+                isFowart = true
+            }
+       }
+       p.innerHTML = originContent.substring(0, index)
+   },200)
+</script>
+</html>
